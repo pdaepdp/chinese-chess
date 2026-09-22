@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>隐私政策 · 象棋研习</title>
+<meta name="description" content="象棋研习的隐私政策，说明我们如何处理数据、Cookie 以及第三方广告服务。">
+<link rel="canonical" href="https://pdaepdp.github.io/chinese-chess/privacy.html">
+<meta property="og:title" content="隐私政策 · 象棋研习">
+<meta property="og:description" content="象棋研习的隐私政策，说明我们如何处理数据、Cookie 以及第三方广告服务。">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+<div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
+<div class="grain"></div>
+
+<header class="glass topbar">
+  <a class="brand" href="./index.html">
+    <span class="seal">棋</span>
+    <span class="bt"><b>象棋研习</b><i>中国象棋教学与在线对弈</i></span>
+  </a>
+  <nav class="nav"><a href="./index.html">对弈</a><a href="./articles/">教学文章</a><a href="./about.html">关于</a><a href="./contact.html">联系</a></nav>
+</header>
+
+<main class="wrap">
+
+<article class="glass prose">
+  <h1>隐私政策</h1>
+  <h2>概述</h2>
+<p>本页说明象棋研习（以下简称「本站」）在你访问和使用本站时如何处理相关信息。我们尊重你的隐私，并尽可能减少数据收集。</p>
+<h2>我们直接收集的信息</h2>
+<p>本站不需要注册，也不要求你提供任何个人信息即可使用全部功能。</p>
+<p><strong>对局数据</strong>：本站的对弈程序完全在你的浏览器本地运行。你的棋局、走法记录和设置都只保存在当前页面的内存中，刷新页面即会清空，不会上传到任何服务器。</p>
+<p><strong>服务器日志</strong>：本站托管于 GitHub Pages。与所有网站一样，托管服务商可能会自动记录标准的访问日志（如 IP 地址、浏览器类型、访问时间），用于安全与运维目的。我们无法访问或控制这些日志。</p>
+<h2>Cookie 与同类技术</h2>
+<p>本站自身不设置任何用于追踪你的 Cookie。但正如下一节所述，第三方广告服务商可能会在你的浏览器中设置 Cookie。</p>
+<h2>第三方广告服务</h2>
+<p>本站可能使用 Google AdSense 等第三方广告服务来展示广告，以支持站点的持续运营。</p>
+<p><strong>Google 及其合作伙伴</strong>可能会使用 Cookie（包括 DoubleClick Cookie）根据你此前对本站或其他网站的访问记录投放广告。</p>
+<p>Google 使用广告 Cookie 使其及其合作伙伴能够根据你访问本站和/或其他网站的情况向你展示广告。</p>
+<p>你可以通过访问 <strong>Google 广告设置</strong>（adssettings.google.com）选择停用个性化广告。你也可以访问 <strong>aboutads.info</strong> 选择停用部分第三方厂商用于个性化广告的 Cookie。</p>
+<p>如果你希望完全拒绝 Cookie，可以在浏览器设置中禁用 Cookie。请注意，这可能会影响部分网站的正常功能。</p>
+<h2>儿童隐私</h2>
+<p>本站内容适合所有年龄段。我们不会有意收集儿童的个人信息。由于本站不要求注册也不收集个人信息，因此不存在针对儿童的定向数据收集行为。</p>
+<h2>外部链接</h2>
+<p>本站可能包含指向其他网站的链接。我们不对这些外部网站的隐私做法或内容负责，建议你在访问时查阅其各自的隐私政策。</p>
+<h2>政策更新</h2>
+<p>我们可能会不时更新本隐私政策。任何变更都会发布在本页面，并更新下方的生效日期。</p>
+<p><strong>生效日期</strong>：2026 年 9 月 23 日</p>
+<h2>联系我们</h2>
+<p>如果你对本隐私政策有任何疑问，请通过联系页面与我们取得联系。</p>
+</article>
+</main>
+
+<footer class="foot">
+  <div class="flinks">
+    <a href="./index.html">在线对弈</a>
+    <a href="./articles/">教学文章</a>
+    <a href="./about.html">关于本站</a>
+    <a href="./contact.html">联系我们</a>
+    <a href="./privacy.html">隐私政策</a>
+  </div>
+  <p>象棋研习 · 中国象棋规则、战术与残局教学，并提供免费在线对弈。</p>
+</footer>
+<script>
+/* 玻璃高光跟随光标 */
+(function(){
+  var pending=false;
+  addEventListener('mousemove',function(e){
+    if(pending)return; pending=true;
+    requestAnimationFrame(function(){
+      pending=false;
+      document.querySelectorAll('.glass').forEach(function(el){
+        var r=el.getBoundingClientRect();
+        el.style.setProperty('--mx',(e.clientX-r.left)+'px');
+        el.style.setProperty('--my',(e.clientY-r.top)+'px');
+      });
+    });
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

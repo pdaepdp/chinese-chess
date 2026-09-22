@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>关于本站 · 象棋研习</title>
+<meta name="description" content="了解象棋研习：一个专注于中国象棋规则、战术与残局教学，并提供免费在线对弈的站点。">
+<link rel="canonical" href="https://pdaepdp.github.io/chinese-chess/about.html">
+<meta property="og:title" content="关于本站 · 象棋研习">
+<meta property="og:description" content="了解象棋研习：一个专注于中国象棋规则、战术与残局教学，并提供免费在线对弈的站点。">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+<div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
+<div class="grain"></div>
+
+<header class="glass topbar">
+  <a class="brand" href="./index.html">
+    <span class="seal">棋</span>
+    <span class="bt"><b>象棋研习</b><i>中国象棋教学与在线对弈</i></span>
+  </a>
+  <nav class="nav"><a href="./index.html">对弈</a><a href="./articles/">教学文章</a><a href="./about.html" class="on">关于</a><a href="./contact.html">联系</a></nav>
+</header>
+
+<main class="wrap">
+
+<article class="glass prose">
+  <h1>关于本站</h1>
+  <h2>本站是什么</h2>
+<p>象棋研习是一个专注于中国象棋的学习型站点。我们提供两样东西：一是可以直接在浏览器里玩的中国象棋对弈程序，二是系统整理的象棋教学文章。</p>
+<p>我们的目标是让初学者能够真正理解象棋，而不只是记住走法。因此这里的每一篇文章都力求讲清「为什么」——为什么这一步是好棋，为什么这个残局是必和，为什么这个开局体系值得学习。</p>
+<h2>对弈功能</h2>
+<p>本站的对弈程序完全在浏览器中运行，不需要注册、不需要安装、不需要联网即可使用。它实现了完整的中国象棋规则，包括将帅照面、蹩马腿、塞象眼、炮打隔子等全部细节，并提供了三档难度的人机对弈模式。</p>
+<p>对弈时你可以随时悔棋、重开，并查看标准的中文记谱。这使它非常适合用来演练残局定式和验证杀法思路。</p>
+<h2>教学文章</h2>
+<p>教学部分目前涵盖规则详解、子力运用、开局原则、常见杀法、残局定式与记谱方法六个方向，共六篇长文。我们更倾向于把每个主题讲深讲透，而不是罗列大量浅尝辄止的条目。</p>
+<p>如果你希望看到某个特定主题的深入讲解，欢迎通过联系页面告诉我们。</p>
+<h2>关于技术</h2>
+<p>本站是一个纯静态站点，所有内容都由 HTML、CSS 和 JavaScript 构成，不依赖任何后端服务。对弈程序中的搜索引擎采用 Alpha-Beta 剪枝配合静态搜索实现，棋力规则经过严格的走子生成测试校验。</p>
+<p>这意味着页面加载迅速，并且你的对局过程完全发生在你自己的设备上——没有任何棋局数据会被上传。</p>
+</article>
+</main>
+
+<footer class="foot">
+  <div class="flinks">
+    <a href="./index.html">在线对弈</a>
+    <a href="./articles/">教学文章</a>
+    <a href="./about.html">关于本站</a>
+    <a href="./contact.html">联系我们</a>
+    <a href="./privacy.html">隐私政策</a>
+  </div>
+  <p>象棋研习 · 中国象棋规则、战术与残局教学，并提供免费在线对弈。</p>
+</footer>
+<script>
+/* 玻璃高光跟随光标 */
+(function(){
+  var pending=false;
+  addEventListener('mousemove',function(e){
+    if(pending)return; pending=true;
+    requestAnimationFrame(function(){
+      pending=false;
+      document.querySelectorAll('.glass').forEach(function(el){
+        var r=el.getBoundingClientRect();
+        el.style.setProperty('--mx',(e.clientX-r.left)+'px');
+        el.style.setProperty('--my',(e.clientY-r.top)+'px');
+      });
+    });
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

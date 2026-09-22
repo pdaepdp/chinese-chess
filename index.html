@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>中国象棋 · Liquid Glass</title>
+<title>中国象棋 · 免费在线对弈与教学</title>
+<meta name="description" content="免费在线中国象棋：完整规则、三档难度人机对战、中文记谱与悔棋，并附规则详解、开局原则、常见杀法、残局定式等系统教学文章。">
+<link rel="canonical" href="https://pdaepdp.github.io/chinese-chess/">
 <style>
 /* ============ 基础 ============ */
 *{box-sizing:border-box}
@@ -66,6 +68,18 @@ h1{margin:0;font-size:19px;letter-spacing:.02em;font-weight:650}
 .hintbar{font-size:12.5px;color:#64748b;display:flex;align-items:center;gap:8px}
 .kbd{display:inline-block;padding:2px 7px;border-radius:7px;background:rgba(255,255,255,.7);
   border:1px solid rgba(255,255,255,.9);box-shadow:0 1px 3px rgba(31,41,55,.1);font-size:11.5px;color:#475569}
+.topnav{display:flex;gap:4px;flex-wrap:wrap}
+.topnav a{padding:7px 13px;border-radius:11px;font-size:13.5px;color:#5b6878;font-weight:600;
+  text-decoration:none;transition:.2s}
+.topnav a:hover{background:rgba(255,255,255,.6);color:#1f2937}
+.topnav a.on{background:linear-gradient(150deg,rgba(255,255,255,.98),rgba(255,255,255,.72));
+  color:#1f2937;box-shadow:0 3px 10px rgba(31,41,55,.12),inset 0 1px 0 rgba(255,255,255,.9)}
+.artlinks{display:flex;flex-direction:column;gap:2px}
+.artlinks a{padding:6px 9px;border-radius:9px;font-size:13px;color:#4b5a6b;text-decoration:none;transition:.18s}
+.artlinks a:hover{background:rgba(255,255,255,.62);color:#1f2937}
+.sitefoot{text-align:center;font-size:12px;color:#93a0b0;padding-top:2px;line-height:2}
+.sitefoot a{color:#5b6878;margin:0 7px;text-decoration:none}
+.sitefoot a:hover{text-decoration:underline}
 .main{display:grid;grid-template-columns:minmax(0,1fr) 322px;gap:18px;align-items:start}
 @media(max-width:920px){.main{grid-template-columns:minmax(0,1fr)}}
 .main>*{min-width:0}
@@ -219,7 +233,12 @@ footer{text-align:center;font-size:11.5px;color:#93a0b0;letter-spacing:.05em;pad
         <div class="sub">Chinese Chess · Liquid Glass</div>
       </div>
     </div>
-    <div class="hintbar">点击棋子选中 · 再点落点走棋</div>
+    <nav class="topnav">
+      <a href="index.html" class="on">对弈</a>
+      <a href="articles/">教学文章</a>
+      <a href="about.html">关于</a>
+      <a href="contact.html">联系</a>
+    </nav>
   </header>
 
   <div class="main">
@@ -280,10 +299,26 @@ footer{text-align:center;font-size:11.5px;color:#93a0b0;letter-spacing:.05em;pad
         <div class="sec-title" style="margin-bottom:7px">棋谱</div>
         <div class="moves" id="moves"><div class="empty">尚无着法</div></div>
       </div>
+
+      <div>
+        <div class="sec-title" style="margin-bottom:7px">教学文章</div>
+        <div class="artlinks">
+          <a href="articles/rules.html">规则完全指南</a>
+          <a href="articles/pieces.html">七种棋子运用</a>
+          <a href="articles/openings.html">开局原则与体系</a>
+          <a href="articles/mates.html">八种常见杀法</a>
+          <a href="articles/endgames.html">残局基本功</a>
+          <a href="articles/notation.html">中文记谱法</a>
+        </div>
+      </div>
     </aside>
   </div>
 
-  <footer>标准象棋规则 · 将帅照面 · 蹩马腿 · 塞象眼 · 炮打隔子</footer>
+  <footer class="sitefoot">
+    标准象棋规则 · 将帅照面 · 蹩马腿 · 塞象眼 · 炮打隔子<br>
+    <a href="articles/">教学文章</a> · <a href="about.html">关于本站</a> ·
+    <a href="contact.html">联系我们</a> · <a href="privacy.html">隐私政策</a>
+  </footer>
 </div>
 
 <script>

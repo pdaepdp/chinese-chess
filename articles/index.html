@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>教学文章 · 象棋研习</title>
+<meta name="description" content="中国象棋系统教学：规则详解、子力运用、开局原则、常见杀法、残局定式与记谱方法。">
+<link rel="canonical" href="https://pdaepdp.github.io/chinese-chess/articles/">
+<meta property="og:title" content="教学文章 · 象棋研习">
+<meta property="og:description" content="中国象棋系统教学：规则详解、子力运用、开局原则、常见杀法、残局定式与记谱方法。">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
+<div class="grain"></div>
+
+<header class="glass topbar">
+  <a class="brand" href="../index.html">
+    <span class="seal">棋</span>
+    <span class="bt"><b>象棋研习</b><i>中国象棋教学与在线对弈</i></span>
+  </a>
+  <nav class="nav"><a href="../index.html">对弈</a><a href="../articles/" class="on">教学文章</a><a href="../about.html">关于</a><a href="../contact.html">联系</a></nav>
+</header>
+
+<main class="wrap">
+
+<section class="glass prose">
+  <h1>教学文章</h1>
+  <p>六篇系统讲解，从规则到残局。每篇都力求讲清「为什么」，而不只是罗列「是什么」。</p>
+</section>
+<div class="cards">
+  <a class="glass card" href="rules.html">
+    <div class="ct">中国象棋规则完全指南</div>
+    <p>从棋盘摆法到胜负判定，一篇讲清中国象棋的全部规则，包括将帅照面、困毙等容易被忽略的细节。</p>
+    <div class="meta"><span class="tag">入门</span><span class="tag">规则</span></div>
+  </a>
+  <a class="glass card" href="pieces.html">
+    <div class="ct">七种棋子：走法、价值与运用要点</div>
+    <p>逐个子力拆解中国象棋的车、马、炮、兵、相、仕、帅，讲清走法、相对价值与实战中的运用诀窍。</p>
+    <div class="meta"><span class="tag">入门</span><span class="tag">子力</span></div>
+  </a>
+  <a class="glass card" href="openings.html">
+    <div class="ct">开局原则与常见开局体系</div>
+    <p>掌握象棋开局的三大核心原则，并认识中炮、屏风马、飞相局、仙人指路等主流开局的基本思路。</p>
+    <div class="meta"><span class="tag">进阶</span><span class="tag">开局</span></div>
+  </a>
+  <a class="glass card" href="mates.html">
+    <div class="ct">八种常见杀法：从入门到实战</div>
+    <p>详解马后炮、双车错、铁门栓、重炮、卧槽马、天地炮等经典杀法，理解象棋的基本杀棋思路。</p>
+    <div class="meta"><span class="tag">进阶</span><span class="tag">战术</span></div>
+  </a>
+  <a class="glass card" href="endgames.html">
+    <div class="ct">残局基本功：常见残局的胜和定式</div>
+    <p>讲解单马擒单士、单车胜单士、兵类残局等常见残局的胜负规律，以及将帅照面在残局中的关键作用。</p>
+    <div class="meta"><span class="tag">进阶</span><span class="tag">残局</span></div>
+  </a>
+  <a class="glass card" href="notation.html">
+    <div class="ct">中文记谱法完全指南</div>
+    <p>彻底搞懂象棋的中文记谱规则：红黑纵线编号为何不同、进退平如何区分、前后缀何时使用。</p>
+    <div class="meta"><span class="tag">入门</span><span class="tag">记谱</span></div>
+  </a>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="flinks">
+    <a href="../index.html">在线对弈</a>
+    <a href="../articles/">教学文章</a>
+    <a href="../about.html">关于本站</a>
+    <a href="../contact.html">联系我们</a>
+    <a href="../privacy.html">隐私政策</a>
+  </div>
+  <p>象棋研习 · 中国象棋规则、战术与残局教学，并提供免费在线对弈。</p>
+</footer>
+<script>
+/* 玻璃高光跟随光标 */
+(function(){
+  var pending=false;
+  addEventListener('mousemove',function(e){
+    if(pending)return; pending=true;
+    requestAnimationFrame(function(){
+      pending=false;
+      document.querySelectorAll('.glass').forEach(function(el){
+        var r=el.getBoundingClientRect();
+        el.style.setProperty('--mx',(e.clientX-r.left)+'px');
+        el.style.setProperty('--my',(e.clientY-r.top)+'px');
+      });
+    });
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

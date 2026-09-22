@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>联系我们 · 象棋研习</title>
+<meta name="description" content="通过电子邮件联系象棋研习，反馈错误、提出建议或申请内容授权。">
+<link rel="canonical" href="https://pdaepdp.github.io/chinese-chess/contact.html">
+<meta property="og:title" content="联系我们 · 象棋研习">
+<meta property="og:description" content="通过电子邮件联系象棋研习，反馈错误、提出建议或申请内容授权。">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+<div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
+<div class="grain"></div>
+
+<header class="glass topbar">
+  <a class="brand" href="./index.html">
+    <span class="seal">棋</span>
+    <span class="bt"><b>象棋研习</b><i>中国象棋教学与在线对弈</i></span>
+  </a>
+  <nav class="nav"><a href="./index.html">对弈</a><a href="./articles/">教学文章</a><a href="./about.html">关于</a><a href="./contact.html" class="on">联系</a></nav>
+</header>
+
+<main class="wrap">
+
+<article class="glass prose">
+  <h1>联系我们</h1>
+  <h2>联系方式</h2>
+<p>如果你在使用本站时遇到问题，或者对内容有建议，欢迎通过电子邮件与我们联系。</p>
+<p><strong>电子邮箱</strong>：请通过本站所在的 GitHub 仓库提交 issue，或发送邮件至站点维护者。</p>
+<h2>反馈问题</h2>
+<p>如果发现对弈程序出现规则错误、界面异常或其他技术问题，请尽量提供以下信息，这将帮助我们更快定位问题：你使用的浏览器与版本、出现问题的具体走法（可以用记谱表示），以及问题的简要描述。</p>
+<h2>内容建议</h2>
+<p>我们欢迎关于教学内容的具体建议。如果你觉得某个象棋概念讲得不够清楚，或者希望增加某个主题的讲解，请直接告诉我们。</p>
+<h2>响应时间</h2>
+<p>本站由个人维护，我们会在方便时尽快回复。感谢你的耐心与理解。</p>
+</article>
+</main>
+
+<footer class="foot">
+  <div class="flinks">
+    <a href="./index.html">在线对弈</a>
+    <a href="./articles/">教学文章</a>
+    <a href="./about.html">关于本站</a>
+    <a href="./contact.html">联系我们</a>
+    <a href="./privacy.html">隐私政策</a>
+  </div>
+  <p>象棋研习 · 中国象棋规则、战术与残局教学，并提供免费在线对弈。</p>
+</footer>
+<script>
+/* 玻璃高光跟随光标 */
+(function(){
+  var pending=false;
+  addEventListener('mousemove',function(e){
+    if(pending)return; pending=true;
+    requestAnimationFrame(function(){
+      pending=false;
+      document.querySelectorAll('.glass').forEach(function(el){
+        var r=el.getBoundingClientRect();
+        el.style.setProperty('--mx',(e.clientX-r.left)+'px');
+        el.style.setProperty('--my',(e.clientY-r.top)+'px');
+      });
+    });
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

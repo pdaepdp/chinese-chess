@@ -1,0 +1,2 @@
+# 通过 AdSense 审核后，把下面这行替换为 Google 提供的正式内容
+# 格式：google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
