@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>页面未找到 · 象棋研习</title>
+<meta name="description" content="未找到该页面。可前往在线对弈或教学文章继续浏览。">
+<link rel="canonical" href="https://pdaepdp.github.io/chinese-chess/404.html">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./favicon.svg">
+<meta name="theme-color" content="#eef3fb">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="象棋研习">
+<meta property="og:title" content="页面未找到 · 象棋研习">
+<meta property="og:description" content="未找到该页面。可前往在线对弈或教学文章继续浏览。">
+<meta property="og:url" content="https://pdaepdp.github.io/chinese-chess/404.html">
+<meta property="og:image" content="https://pdaepdp.github.io/chinese-chess/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="./assets/site.css">
+
+</head>
+<body>
+<div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
+<div class="grain"></div>
+
+<header class="glass topbar">
+  <a class="brand" href="./index.html">
+    <span class="seal">棋</span>
+    <span class="bt"><b>象棋研习</b><i>中国象棋教学与在线对弈</i></span>
+  </a>
+  <nav class="nav"><a href="./index.html">对弈</a><a href="./articles/">教学文章</a><a href="./about.html">关于</a><a href="./contact.html">联系</a></nav>
+</header>
+
+<main class="wrap">
+
+<article class="glass prose" style="text-align:center">
+  <h1>404 · 没有找到这个页面</h1>
+  <p>你访问的地址不存在，可能是链接输入有误，或者该页面已被移动。</p>
+  <p>不妨从下面这些地方继续：</p>
+  <div class="cards" style="margin-top:18px;text-align:left">
+    <a class="glass card" href="/chinese-chess/">
+      <div class="ct">在线对弈</div>
+      <p>打开棋盘，与电脑对弈或双人对战。</p>
+    </a>
+    <a class="glass card" href="/chinese-chess/articles/">
+      <div class="ct">教学文章</div>
+      <p>规则、开局、杀法、残局与记谱的系统讲解。</p>
+    </a>
+  </div>
+</article>
+</main>
+
+<footer class="foot">
+  <div class="flinks">
+    <a href="./index.html">在线对弈</a>
+    <a href="./articles/">教学文章</a>
+    <a href="./about.html">关于本站</a>
+    <a href="./contact.html">联系我们</a>
+    <a href="./privacy.html">隐私政策</a>
+  </div>
+  <p>象棋研习 · 中国象棋规则、战术与残局教学，并提供免费在线对弈。</p>
+</footer>
+<script>
+/* 玻璃高光跟随光标 */
+(function(){
+  var pending=false;
+  addEventListener('mousemove',function(e){
+    if(pending)return; pending=true;
+    requestAnimationFrame(function(){
+      pending=false;
+      document.querySelectorAll('.glass').forEach(function(el){
+        var r=el.getBoundingClientRect();
+        el.style.setProperty('--mx',(e.clientX-r.left)+'px');
+        el.style.setProperty('--my',(e.clientY-r.top)+'px');
+      });
+    });
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
