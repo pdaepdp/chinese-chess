@@ -283,8 +283,8 @@ footer{text-align:center;font-size:11.5px;color:#93a0b0;letter-spacing:.05em;pad
 
   <div class="main">
     <section class="glass board-panel">
-      <div class="board" id="board" tabindex="0" role="grid"
-           aria-label="中国象棋棋盘。方向键移动光标，回车或空格选子与落子，Esc 取消选择。">
+      <div class="board" id="board" tabindex="0" role="application"
+           aria-label="中国象棋棋盘" aria-describedby="kbHint">
         <svg id="boardSvg" viewBox="0 0 900 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
         <div class="layer layer-marks" id="marks"></div>
         <div class="layer layer-hints" id="hints"></div>
@@ -363,7 +363,7 @@ footer{text-align:center;font-size:11.5px;color:#93a0b0;letter-spacing:.05em;pad
           <a href="articles/notation.html">中文记谱法</a>
         </div>
       </div>
-      <div class="kb-hint">
+      <div class="kb-hint" id="kbHint">
         键盘：<b>方向键</b> 移动光标 · <b>回车</b> 选子／落子 · <b>Esc</b> 取消
       </div>
     </aside>
