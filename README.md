@@ -44,6 +44,7 @@ xiangqi-tests/              ← 测试与运维脚本（不部署）
 ├── _bench_ai.js            各难度耗时
 ├── _depthstudy.js          按深度统计收局率
 ├── _setup_domain.sh        一条命令绑定自有域名
+├── _check_domain.py        域名可用性探测（DNS，指示性）
 └── _verify_deploy.sh       线上内容与本地文件比对
 ```
 
@@ -87,16 +88,30 @@ git add -A && git commit -m "..." && git push
 
 ### 绑定自有域名
 
-```bash
-bash xiangqi-tests/_setup_domain.sh yourdomain.com
-```
+#### 第一步：注册域名
 
-脚本会写入 `CNAME`、把 `site-build/build.js` 里的 `SITE` 改为新域名、
-重新生成全部页面（canonical / og:url / sitemap / 绝对路径前缀随之更新）、
-跑一次链接校验（失败即中止，不会推送）、推送、设置 Pages cname，
-最后轮询 DNS 与 HTTPS 并确认返回的页面标题确为本站。
+**国际注册商**（Porkbun / Namecheap）—— 适合有国际信用卡或 PayPal 的情况：
 
-DNS 需要提前配置：
+1. 打开 porkbun.com 或 namecheap.com
+2. 搜索想要的域名，加入购物车
+3. 注册账号（只需邮箱）并付款
+4. 付款后即可在后台管理 DNS
+
+`.xyz` 首年促销价通常在 $1–3，**续费约 $10–15/年**，注意别只看首年价。
+
+**国内注册商**（阿里云 / 腾讯云）—— 适合只有支付宝/微信的情况：
+
+1. 搜索「域名注册」，查询并购买
+2. **必须完成实名认证**（上传身份证），这是国内注册商的强制要求
+3. 用支付宝或微信付款
+4. 实名认证通常几小时内通过
+
+> **不需要 ICP 备案。** 备案只针对「在中国大陆境内托管」的网站。
+> 本站托管在 GitHub Pages（境外），因此无需备案。
+
+#### 第二步：配置 DNS
+
+在注册商的 DNS 管理页面添加以下记录：
 
 | 类型 | 主机 | 值 |
 |---|---|---|
@@ -106,9 +121,30 @@ DNS 需要提前配置：
 | A | `@` | `185.199.111.153` |
 | CNAME | `www` | `pdaepdp.github.io` |
 
+#### 第三步：一键切换
+
+```bash
+bash xiangqi-tests/_setup_domain.sh yourdomain.com
+```
+
+脚本会写入 `CNAME`、把 `site-build/build.js` 里的 `SITE` 改为新域名、
+重新生成全部页面（canonical / og:url / sitemap / 绝对路径前缀随之更新）、
+跑一次链接校验（失败即中止，不会推送）、推送、设置 Pages cname，
+最后轮询 DNS 与 HTTPS 并确认返回的页面标题确为本站。
+
 > 站点路径前缀由 `build.js` 中的 `BASE` 常量（从 `SITE` 推导）统一管理。
 > 换域名后只需改 `SITE` 一行，全站绝对路径会一起更新 ——
 > 不要在 HTML 里硬编码路径。
+
+#### 附：域名可用性探测
+
+```bash
+python xiangqi-tests/_check_domain.py name1.xyz name2.com
+```
+
+基于 DNS 查询给出「已注册 / 可能可用 / 无法判断」。
+**注意这只是指示性的**：已注册但未做 NS 委派的域名会被误判为可用，
+最终以注册商页面为准。
 
 ## 待办
 
