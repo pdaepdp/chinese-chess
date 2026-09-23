@@ -1,6 +1,6 @@
 # 象棋研习 · 中国象棋在线对弈与教学
 
-一个零依赖的静态站点：可在浏览器中直接对弈的中国象棋程序，外加六篇系统教学文章。
+一个零依赖的静态站点：可在浏览器中直接对弈的中国象棋程序，外加十二篇系统教学文章。
 
 **线上地址**：https://pdaepdp.github.io/chinese-chess/
 
@@ -21,7 +21,7 @@
 ```
 xiangqi/                    ← 站点根目录（= 部署内容，GitHub Pages 的 main 分支）
 ├── index.html              对弈主页面（单文件，内联样式与脚本）
-├── articles/               六篇教学文章 + 文章索引
+├── articles/               十二篇教学文章 + 文章索引
 ├── about.html              关于本站
 ├── contact.html            联系我们
 ├── privacy.html            隐私政策（AdSense 要求）
