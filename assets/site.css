@@ -142,3 +142,19 @@ a:hover{text-decoration:underline}
 .flinks{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
 .flinks a{font-size:13px;color:#5b6878}
 .foot p{margin:0;font-size:12px;color:#93a0b0;letter-spacing:.03em}
+
+/* ---------- 可访问性 ---------- */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0}
+a:focus-visible,.btn:focus-visible,.nav a:focus-visible{
+  outline:3px solid rgba(91,141,239,.65);outline-offset:3px;border-radius:11px;
+}
+
+/* 尊重系统「减少动态效果」设置 */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .blob{animation:none!important}
+  .glass::after{transition:none!important}
+  .card{transition:none!important}
+  .btn{transition:none!important}
+}
